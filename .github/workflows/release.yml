@@ -1,0 +1,43 @@
+name: Release
+
+# v で始まるタグ（例: v0.1.0）を push すると、Windows 用インストーラをビルドして GitHub Releases に公開する
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+
+      - run: npm ci
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: Progress Tracker ${{ github.ref_name }}
+          releaseBody: |
+            Windows 用インストーラです。
+            - `*_x64-setup.exe` … 通常はこちら（NSIS インストーラ）
+            - `*_x64_en-US.msi` … MSI 版
+          releaseDraft: false
+          prerelease: false

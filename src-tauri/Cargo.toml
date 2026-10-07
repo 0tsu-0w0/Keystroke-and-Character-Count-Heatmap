@@ -1,0 +1,35 @@
+[package]
+name = "progress-tracker"
+version = "0.1.0"
+description = "Keystroke (KPM) and character-count progress tracker with a GitHub-style heatmap"
+authors = ["0tsu-0w0"]
+repository = "https://github.com/0tsu-0w0/Keystroke-and-Character-Count-Heatmap"
+edition = "2021"
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "progress_tracker_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+similar = "2"
+rdev = "0.5"
+active-win-pos-rs = "0.9"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
