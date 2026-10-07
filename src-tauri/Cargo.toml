@@ -1,6 +1,6 @@
 [package]
 name = "progress-tracker"
-version = "0.1.0"
+version = "0.1.1"
 description = "Keystroke (KPM) and character-count progress tracker with a GitHub-style heatmap"
 authors = ["0tsu-0w0"]
 license = "MIT"
