@@ -3,6 +3,7 @@ name = "progress-tracker"
 version = "0.1.0"
 description = "Keystroke (KPM) and character-count progress tracker with a GitHub-style heatmap"
 authors = ["0tsu-0w0"]
+license = "MIT"
 repository = "https://github.com/0tsu-0w0/Keystroke-and-Character-Count-Heatmap"
 edition = "2021"
 

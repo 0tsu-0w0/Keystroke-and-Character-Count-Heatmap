@@ -121,3 +121,7 @@ git push origin v0.1.0
 | `src-tauri/src/diff.rs` | 文字単位の diff（増加・減少の計算） |
 | `src-tauri/src/model.rs` | 設定・記録のデータ型、論理日付の計算 |
 | `src/components/` | 文字数カード、KPM カード、ヒートマップ、設定ダイアログ |
+
+## ライセンス
+
+[MIT License](LICENSE)
