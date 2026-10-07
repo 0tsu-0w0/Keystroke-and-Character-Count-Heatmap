@@ -2,6 +2,13 @@
 
 執筆の進み具合を記録する Windows 向けのデスクトップアプリです（Tauri 2 + React + shadcn/ui）。
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
+  <img alt="Progress Tracker の画面。上段左に文字数の増減グラフ、上段右に分間キーストロークのグラフ、下段に 15 分ごとのヒートマップ" src="docs/screenshot.png">
+</picture>
+
+<sub>※ 画面はデモデータです。OS のダークモードにも追従します。</sub>
+
 - **分間キーストローク (KPM)** … 指定したアプリ（例: `Code.exe`、`WINWORD.EXE`）が前面にある間だけキー入力を数えます。直近 60 秒の値と、1 分ごとの推移グラフを表示します。
 - **文字数の累計変化** … 指定したファイルを定期的に読み、前回の内容と **1 文字ずつ比べて（diff）** 増えた分・減った分を別々に積み上げます。純増減 = 増加 − 減少 です。
 - **15 分ごとのヒートマップ** … GitHub の「草」のように、その日の 純増減／増加／減少／キー数 を色の濃さで表示します。

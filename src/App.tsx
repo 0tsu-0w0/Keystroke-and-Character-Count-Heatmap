@@ -6,6 +6,9 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { useSnapshot } from "@/hooks/use-snapshot"
 import { isTauri } from "@/lib/api"
 
+// README 用スクリーンショットの撮影時（?screenshot）はデモ表示の注意書きを出さない
+const hideDemoNotice = new URLSearchParams(window.location.search).has("screenshot")
+
 export default function App() {
   const { snap, error, refresh } = useSnapshot()
 
@@ -18,7 +21,7 @@ export default function App() {
           </div>
         ) : (
           <div className="mx-auto grid max-w-[1600px] gap-4">
-            {!isTauri && (
+            {!isTauri && !hideDemoNotice && (
               <div className="rounded-lg border border-dashed bg-card px-4 py-2 text-sm text-muted-foreground">
                 ブラウザでのプレビュー中です（デモデータを表示しています）。実データは Tauri アプリとして起動すると表示されます。
               </div>
