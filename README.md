@@ -17,8 +17,8 @@
 
 | ファイル | 内容 |
 |---|---|
-| `Progress Tracker_x.y.z_x64-setup.exe` | **通常はこちら**。管理者権限なしでインストールできます |
-| `Progress Tracker_x.y.z_x64_en-US.msi` | MSI 版（社内配布などで MSI が必要な場合） |
+| `Progress.Tracker_x.y.z_x64-setup.exe` | **通常はこちら**。管理者権限なしでインストールできます |
+| `Progress.Tracker_x.y.z_x64_en-US.msi` | MSI 版（社内配布などで MSI が必要な場合） |
 
 ### 2. インストーラを実行
 
